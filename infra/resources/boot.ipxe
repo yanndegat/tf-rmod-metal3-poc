@@ -1,0 +1,13 @@
+#!ipxe
+
+echo "DHCP"
+sleep 5
+
+echo "disable public netif"
+ifclose net1
+ifclose net0
+#ifclose net1
+
+sleep 5
+echo "autoboot on vrack netif"
+autoboot net2 || shell
